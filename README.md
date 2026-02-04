@@ -1,10 +1,17 @@
-# Enterprise AI Assistant - ABC Platform
+# Guidely — Agent-Powered Enterprise Operations
 
-**Pitch-Ready MVP for next.nyc "Always Be Closing" Program**
+**Autonomous AI agents for enterprise productivity. Built for next.nyc "Always Be Closing".**
 
 ## What We Built
 
-An AI-powered enterprise productivity platform addressing **4 of the 7 Datadog wish list items**:
+Guidely deploys **persistent AI agents** that handle enterprise operations autonomously. Based on the latest OpenClaw/Pi Runtime architecture (Feb 2026), our agents:
+
+- **Hibernate** when inactive, wake on-demand (cost-efficient)
+- **Maintain memory** across sessions (personalized, contextual)
+- **Collaborate** in swarms for complex tasks
+- **Execute safely** in sandboxed environments
+
+**Addresses 4 of Datadog's 7 ABC wish list items:**
 
 1. ✅ **Help Bots** - Conversational AI for employee support
 2. ✅ **SOP/Training Manual Generator** - Auto-create documentation from processes
@@ -30,11 +37,32 @@ npm run dev
 
 ## Technical Architecture
 
-- **Frontend**: React + TypeScript + Tailwind
-- **Backend**: Node.js + Express
-- **AI Layer**: OpenAI GPT-4 + Embeddings
-- **Vector DB**: Pinecone (or in-memory for MVP)
-- **Auth**: Auth0 enterprise-ready
+Based on **OpenClaw Gateway-Server Model** (Feb 2026 intelligence):
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  Guidely Gateway (Port 18789)                           │
+│  ├── Pi Runtime (Persistent Agent Execution)           │
+│  ├── Skill System (Modular Capabilities)               │
+│  ├── Multi-Tier Memory (Working/Episodic/Semantic)     │
+│  └── Swarm Coordination (Multi-Agent Collaboration)    │
+└─────────────────────────────────────────────────────────┘
+                           │
+    ┌──────────────────────┼──────────────────────┐
+    ▼                      ▼                      ▼
+┌─────────┐        ┌──────────────┐       ┌──────────┐
+│  React  │◄──────►│  Browser     │       │ Vector   │
+│  Client │   WS   │  Control     │       │ Store    │
+└─────────┘        │  (Port 18791)│       └──────────┘
+                   └──────────────┘
+```
+
+**Components:**
+- **Pi Runtime**: Persistent agent state across sessions
+- **Skill System**: Self-configuring capability packages
+- **Memory Tiers**: Working (context), Episodic (history), Semantic (knowledge)
+- **Sandbox**: Docker-isolated code execution
+- **MCP Compatible**: Integrates with Model Context Protocol
 
 ## Team Qualification
 

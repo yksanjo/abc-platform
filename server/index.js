@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
@@ -7,6 +8,9 @@ const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
+
+// Serve static files from React build
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 // Mock knowledge base data
 const knowledgeBase = {
@@ -83,7 +87,6 @@ const sops = [
 app.post('/api/chat', async (req, res) => {
   const { message, context = 'general' } = req.body;
   
-  // Mock AI response - in production this calls OpenAI
   const responses = {
     hr: [
       "Based on our HR policies, you can submit time off requests through the HR portal. Would you like me to walk you through the steps?",
@@ -159,7 +162,6 @@ app.get('/api/sops', (req, res) => {
 app.post('/api/sops/generate', (req, res) => {
   const { title, description, processSteps } = req.body;
   
-  // Mock generation
   const newSop = {
     id: sops.length + 1,
     title: title || "New SOP",
@@ -213,6 +215,11 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', version: '1.0.0' });
 });
 
+// Serve React app for all other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+});
+
 app.listen(PORT, () => {
-  console.log(`🚀 Enterprise AI Server running on port ${PORT}`);
+  console.log(`🚀 Guidely Server running on port ${PORT}`);
 });

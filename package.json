@@ -1,19 +1,22 @@
 {
-  "name": "enterprise-ai-assistant",
+  "name": "guidely",
   "version": "1.0.0",
-  "description": "AI-powered enterprise productivity platform for ABC",
+  "description": "AI-powered enterprise productivity platform - Guidely",
   "main": "server/index.js",
   "scripts": {
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd server && npm run dev",
-    "client": "cd client && npm start",
-    "build": "cd client && npm run build",
-    "start": "cd server && npm start"
+    "postinstall": "cd client && npm install && npm run build",
+    "start": "cd server && npm install && node index.js",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:start\"",
+    "server:dev": "cd server && npm install && npm run dev",
+    "client:start": "cd client && npm install && npm start"
   },
-  "keywords": ["enterprise", "ai", "abc", "next.nyc"],
+  "keywords": ["enterprise", "ai", "guidely", "abc", "next.nyc"],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
