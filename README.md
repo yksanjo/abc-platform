@@ -1,89 +1,84 @@
-# Guidely — Agent-Powered Enterprise Operations
+# abc-platform
 
-**Autonomous AI agents for enterprise productivity. Built for next.nyc "Always Be Closing".**
+## Detailed Description
 
-## What We Built
+abc-platform is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
 
-Guidely deploys **persistent AI agents** that handle enterprise operations autonomously. Based on the latest OpenClaw/Pi Runtime architecture (Feb 2026), our agents:
+## Problem Statement
 
-- **Hibernate** when inactive, wake on-demand (cost-efficient)
-- **Maintain memory** across sessions (personalized, contextual)
-- **Collaborate** in swarms for complex tasks
-- **Execute safely** in sandboxed environments
+Describe the user or business problem this project solves, the target users, and expected outcomes.
 
-**Addresses 4 of Datadog's 7 ABC wish list items:**
+## Solution Overview
 
-1. ✅ **Help Bots** - Conversational AI for employee support
-2. ✅ **SOP/Training Manual Generator** - Auto-create documentation from processes
-3. ✅ **Knowledge Base (HR-focused)** - Intelligent self-service HR portal
-4. ✅ **ChatGPT Integration** - Enterprise-grade LLM deployment
+Summarize the architecture, core modules, and runtime behavior at a high level.
 
-## Live Demo
+## Key Features
+
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
+
+## Repository Structure
+
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Git
+- Project runtime/toolchain for this repo
+
+### Local Setup
 
 ```bash
-# Quick start
-npm install
-npm run dev
+npm ci
+npm run lint
+npm test
+npm run build
 ```
 
-## Why This Wins at ABC
+## Usage
 
-| ABC Buyer Need | Our Solution |
-|---------------|--------------|
-| "Help bots" | Production-ready conversational AI with enterprise security |
-| "SOP generators" | AI-powered process documentation from screen recordings/inputs |
-| "Knowledge bases, especially for HR" | Vector-based HR knowledge base with semantic search |
-| "Anything that integrates with ChatGPT" | Secure enterprise LLM proxy with governance |
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-## Technical Architecture
+## Quality Standards
 
-Based on **OpenClaw Gateway-Server Model** (Feb 2026 intelligence):
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
 
-```
-┌─────────────────────────────────────────────────────────┐
-│  Guidely Gateway (Port 18789)                           │
-│  ├── Pi Runtime (Persistent Agent Execution)           │
-│  ├── Skill System (Modular Capabilities)               │
-│  ├── Multi-Tier Memory (Working/Episodic/Semantic)     │
-│  └── Swarm Coordination (Multi-Agent Collaboration)    │
-└─────────────────────────────────────────────────────────┘
-                           │
-    ┌──────────────────────┼──────────────────────┐
-    ▼                      ▼                      ▼
-┌─────────┐        ┌──────────────┐       ┌──────────┐
-│  React  │◄──────►│  Browser     │       │ Vector   │
-│  Client │   WS   │  Control     │       │ Store    │
-└─────────┘        │  (Port 18791)│       └──────────┘
-                   └──────────────┘
-```
+## Security
 
-**Components:**
-- **Pi Runtime**: Persistent agent state across sessions
-- **Skill System**: Self-configuring capability packages
-- **Memory Tiers**: Working (context), Episodic (history), Semantic (knowledge)
-- **Sandbox**: Docker-isolated code execution
-- **MCP Compatible**: Integrates with Model Context Protocol
+See `SECURITY.md` for responsible disclosure and handling guidelines.
 
-## Team Qualification
+## Contributing
 
-- ✅ Technical co-founder (you)
-- ✅ 2-person founding team
-- ✅ NYC-based
-- ✅ Working prototype (this repo)
-- ✅ Seed-stage appropriate
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
 
-## Revenue Model
+## Roadmap
 
-- **Pilot**: $5K/month (3-month pilot)
-- **Growth**: $25K/year per 100 employees
-- **Enterprise**: Custom pricing with SSO/SOC2
+Track upcoming milestones, technical debt, and planned feature work.
 
-## Next Steps for ABC
+## Support
 
-1. Deploy to production
-2. Secure pilot with Datadog or KPMG
-3. Build out enterprise features (SSO, audit logs)
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
 
----
+## License
 
-**Built for next.nyc Always Be Closing - February 2025**
+This project is released under the MIT License.
